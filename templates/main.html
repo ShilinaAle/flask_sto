@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+<a href="{{ url_for('index') }}">return</a>
+
+<h2>What city?</h2>
+<form method="post" action="/add_message">
+    <input type="text" name="city">
+    <!==input type="text" name="tag"-->
+    <button type="submit">Add message</button>
+</form>
+
+<h3>weather is</h3>
+{% for message in messages %}
+<div>{{ message.city }}&nbsp;<b>#{{ message.tag }}</b></div>
+{% endfor %}
+
+</body>
+</html>
